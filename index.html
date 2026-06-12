@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>StudyFlow AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Hauptnavigation">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"><i class="ph ph-feather"></i></span>
+        <span class="brand-name">StudyFlow AI</span>
+      </div>
+
+      <div class="profile">
+        <span class="avatar">JW</span>
+        <span><strong>Josephine Wendland</strong><small>Lehramt · Mainz</small></span>
+        <button class="icon-button" aria-label="Profil öffnen"><i class="ph ph-caret-down"></i></button>
+      </div>
+
+      <nav class="nav-list" id="navList">
+        <button data-route="overview"><i class="ph ph-house"></i>Heute</button>
+        <button data-route="uploads"><i class="ph ph-folder"></i>Materialien</button>
+        <button data-route="canvas"><i class="ph ph-chalkboard-teacher"></i>Arbeitsfläche</button>
+        <button data-route="calendar"><i class="ph ph-calendar-blank"></i>Kalender</button>
+        <button data-route="learning-plan"><i class="ph ph-book-open"></i>Lernplan</button>
+        <button data-route="gaps"><i class="ph ph-target"></i>Wissenslücken</button>
+        <button data-route="flashcards"><i class="ph ph-cards"></i>Karten</button>
+        <button data-route="quiz"><i class="ph ph-question"></i>Quiz</button>
+        <button data-route="reminders"><i class="ph ph-heart"></i>Erinnerungen</button>
+      </nav>
+
+      <div class="local-status">
+        <strong><span class="status-dot"></span>Lokale Verarbeitung aktiv</strong>
+        <span>Deine Daten bleiben auf diesem Gerät.</span>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="Navigation öffnen" aria-expanded="false">☰</button>
+        <span class="today">Dienstag, 7. Juni · Mainz</span>
+        <label class="global-search">
+          <span aria-hidden="true">⌕</span>
+          <input id="globalSearch" type="search" placeholder="Material, Kurs oder Begriff suchen">
+          <kbd>⌘ K</kbd>
+        </label>
+        <button class="ask-button" id="askButton"><i class="ph ph-sparkle"></i> KI fragen</button>
+        <button class="icon-button notification" aria-label="Benachrichtigungen"><i class="ph ph-bell"></i><span>3</span></button>
+        <span class="user-label">Josephine Wendland · Lehramt</span>
+      </header>
+      <main id="app" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <div class="scrim" id="scrim"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="aiDialog">
+    <form method="dialog" class="dialog-card">
+      <div class="dialog-head">
+        <div><small>Lokaler KI-Copilot</small><h2>Frage an deine Materialien</h2></div>
+        <button class="icon-button" value="cancel" aria-label="Schließen">×</button>
+      </div>
+      <label>Deine Frage<textarea id="aiPrompt" rows="4" placeholder="Zum Beispiel: Erkläre den Unterschied zwischen Translanguaging und Code-Switching."></textarea></label>
+      <p class="trust-note">Die Antwort wird ausschließlich aus deinen lokalen Quellen erzeugt.</p>
+      <div class="dialog-actions">
+        <button class="button secondary" value="cancel">Abbrechen</button>
+        <button class="button primary" id="aiSubmit" value="cancel">Antwort erzeugen</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
