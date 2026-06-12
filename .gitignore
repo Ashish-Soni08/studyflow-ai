@@ -1,0 +1,25 @@
+.env
+.env.*
+!.env.example
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+.uv-cache/
+.uv-python/
+.uv-tools/
+
+node_modules/
+dist/
+coverage/
+
+.DS_Store
+Thumbs.db
+*.log
+
+# Local design exploration archive and duplicated source renders.
+docs/design/local-archive/
+docs/design/open-design/references/

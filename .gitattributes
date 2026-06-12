@@ -1,0 +1,9 @@
+*.png filter=lfs diff=lfs merge=lfs -text
+*.png !text !filter !merge !diff
+assets/hero/josephine-mainz-morning.png filter=lfs diff=lfs merge=lfs -text
+assets/materials/mq3zhq9n-clipboard.png filter=lfs diff=lfs merge=lfs -text
+assets/materials/mq3zhqat-clipboard.png filter=lfs diff=lfs merge=lfs -text
+assets/materials/mq3zhqbu-clipboard.png filter=lfs diff=lfs merge=lfs -text
+docs/design/reference/josephines-tagebuch.png filter=lfs diff=lfs merge=lfs -text
+docs/design/screenshots/josephine-design-comparison.png filter=lfs diff=lfs merge=lfs -text
+docs/design/screenshots/josephine-home-desktop.png filter=lfs diff=lfs merge=lfs -text
